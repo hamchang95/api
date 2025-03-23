@@ -17,17 +17,23 @@ class LovelyCreature(Resource):
             # 200 means ok
         return {'error': 'Creature not found'}, 404
     
-    def post(self, name):
+    def post(self):
         # Get payload
         data = request.get_json()
         
-        if not data:
+        if data:
+            records.update(data)  # Add new entry
+        else:
             return {"message": "No data provided"}, 400
         
-        records.update(data)  # Add new entry
         return {"message": "Record updated", "data": records}, 201 #201 means created
     
 api.add_resource(LovelyCreature, '/creature/<string:name>')
+
+# Add a homepage route
+@app.route('/')
+def home():
+    return "<h1>Welcome to the Creature API</h1><p>Use /creature/&lt;name&gt; to get data.</p>", 200
 
 if __name__ == "__main__":
     app.run(debug=True)
