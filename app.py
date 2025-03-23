@@ -24,8 +24,12 @@ class LovelyCreature(Resource):
         creature_type = data['type']
         records[name] = creature_type
         return{name: records[name]}, 201
-    
+
 api.add_resource(LovelyCreature, '/creature/<string:name>')
+
+@app.route('/')
+def home():
+    return "<h1>Welcome to the Creature API</h1><p>Use /creature/&lt;name&gt; to get data.</p>", 200
 
 if __name__ == "__main__":
     app.run(debug=True)
