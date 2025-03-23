@@ -28,7 +28,7 @@ class LovelyCreature(Resource):
         
         return {"message": "Record updated", "data": records}, 201 #201 means created
     
-api.add_resource(LovelyCreature, '/creature/<string:name>')
+api.add_resource(LovelyCreature, '/creature', '/creature/<string:name>')
 
 # Add a homepage route
 @app.route('/')
