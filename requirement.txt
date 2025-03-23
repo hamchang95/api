@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 flask
 flask-restful
 gunicorn
+=======
+flask
+flask-restful
+gunicorn
+>>>>>>> 57c5c2c (Update app)
