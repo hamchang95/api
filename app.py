@@ -33,7 +33,7 @@ api.add_resource(LovelyCreature, '/creature', '/creature/<string:name>')
 # Add a homepage route
 @app.route('/')
 def home():
-    return "<h1>Welcome to the Creature API</h1><p>Use /creature/&lt;name&gt; to get data.</p>", 200
+    return "<h1>Welcome to the Creature API</h1><p>Use /creature/&lt;name&gt; to get data.</p><p>Post {name of creature: type of creature} to /creature endpoint</p>", 200
 
 if __name__ == "__main__":
     app.run(debug=True)

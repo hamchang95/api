@@ -18,4 +18,6 @@ if response.status_code == 201:
     print(json_response)
 else:
     print(response.status_code)
+    print(response.text)
+
 
